@@ -12,11 +12,11 @@ void main() async {
     options: DefaultFirebaseOptions.currentPlatform,
   );
 
-  runApp(const MyApp());
+  runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({Key key}) : super(key: key);
+  // const MyApp({Key key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -25,19 +25,19 @@ class MyApp extends StatelessWidget {
         //TODO: implement dark mode switcher and adapt plugin for dark mode
         theme: Themes.lightTheme,
         darkTheme: Themes.darkTheme,
-        home: const Home());
+        home: Home());
   }
 }
 
 class Home extends StatefulWidget {
-  const Home({Key key}) : super(key: key);
+  // const Home({Key key}) : super(key: key);
 
   @override
   _HomeState createState() => _HomeState();
 }
 
 class _HomeState extends State<Home> {
-  static String collectionDbName = 'instagram_stories_db';
+  static String collectionDbName = 'stories';
 
   //TODO: add possibility get data from any API
   CollectionReference dbInstance =
@@ -55,7 +55,7 @@ class _HomeState extends State<Home> {
         title: const Text("Flutter instagram stories"),
       ),
       body: Container(
-        color: Colors.indigo,
+        color: Colors.green,
         child: Column(
           children: <Widget>[
             FlutterInstagramStories(
